@@ -1,1 +1,1 @@
-# rc
+# Representación del Conocimiento
