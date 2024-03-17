@@ -5,13 +5,16 @@ insercion(+Lista, -R)
 	los elementos de Lista ordenados de menor a mayor.
 	
 */
-ordena(elem, [], [elem]).
-ordena(e, [Cab|Resto], [Cab|R2]) :- e > Cab, ordena(e, Resto, R2).
+ordena(Elem, [], [Elem]).
 
-ordena(e, [Cab|Resto],[e, Cab|Resto]) :- e =< Cab.
+ordena(Elem, [Cab|Resto], [Cab|R2]) :- 
+Elem > Cab, ordena(Elem, Resto, R2).
+
+ordena(Elem, [Cab|Resto],[Elem, Cab|Resto]) :-
+Elem =< Cab.
 
 insercion([], []).
-
 insercion([Elem], [Elem]).
 
-insercion([Cabe|Resto], R) :- insercion(Resto, R2), ordena(Cabe, R2, R).
+insercion([Cabe|Resto], R) :- 
+insercion(Resto, R2), ordena(Cabe, R2, R).
