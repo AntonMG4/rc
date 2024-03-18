@@ -14,7 +14,6 @@ ordena(Elem, [Cab|Resto],[Elem, Cab|Resto]) :-
 Elem =< Cab.
 
 insercion([], []).
-insercion([Elem], [Elem]).
 
 insercion([Cabe|Resto], R) :- 
 insercion(Resto, R2), ordena(Cabe, R2, R).
